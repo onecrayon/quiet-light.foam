@@ -1,0 +1,188 @@
+/*
+  @theme Quiet Light
+  @override-placeholders html, xml, css, php, php-html
+  @author Ian Beck
+*/
+ 
+@base {
+	color: #333;
+	background-color: #f5f5f5;
+	insertion-point-color: #000;
+	selection-background-color: default;
+}
+
+/* @group Generic */
+
+tag, source, sourcecode {
+	spell-check: disabled;
+}
+
+comment {
+	color: #aaa;
+	font-style: italic;
+}
+
+string.quoted {
+	color: #448C27;
+}
+
+constant.numeric, literal.numeric, literal.keyword, keyword.constant, keyword.definition {
+	color: #AB6526;
+}
+
+storage.type {
+	color: #7a3e9d;
+}
+
+keyword.control {
+	color: #4B83CD;
+}
+
+operator {
+	color: #777;
+}
+
+/* @end */
+
+/* @group HTML */
+
+tag {
+	color: #91B3E0;
+}
+
+entity.name {
+	color: #4B83CD;
+}
+
+/* Deprecated elements */
+entity.name[text='applet'],
+entity.name[text='basefont'],
+entity.name[text='center'],
+entity.name[text='dir'],
+entity.name[text='font'],
+entity.name[text='isindex'],
+entity.name[text='menu'],
+entity.name[text='s'],
+entity.name[text='strike'],
+entity.name[text='u'] {
+	background: rgba(150, 0, 0, .08);
+}
+
+entity.character {
+	color: #AB6526;
+}
+
+attribute-name {
+	color: #91B3E0;
+	font-style: italic;
+}
+
+tag.doctype, tag.doctype entity.name {
+	color: #aaa;
+}
+
+/* @end */
+ 
+/* @group CSS */
+
+css {
+	spell-check: disabled;
+}
+
+css punctuation,
+css property-value > punctuation.separator.css,
+css property-value > punctuation.terminator.rule.css {
+	color: #333;
+}
+
+css > property-name {
+	color: #AB6526;
+}
+
+css property-value {
+	color: #448C27;
+}
+
+css.selector, css.selector > entity > punctuation {
+	color: #7a3e9d;
+}
+
+css keyword.important, keyword.important.css {
+	font-weight: bold;
+}
+
+css comment punctunation,
+css comment.block.css,
+css comment punctuation.begin,
+css comment punctuation.end {
+	color: #aaa;
+}
+
+css color,
+css punctuation.definition.constant,
+css group-start.comment.block.css,
+css group-end.comment.block.css {
+	color: #448C27;
+}
+
+css .group-start .name {
+	color: #448C27;
+	font-weight: bold;
+}
+
+embedded.styling.css, embedded.property-list.css {
+	background: #EFE8F3;
+}
+
+/* @end */
+
+/* @group Javascript */
+
+js.embedded {
+	background: #EAEBE6;
+}
+
+js keyword.operator.new {
+	color: #7a3e9d;
+}
+
+js meta, js parameters.begin, js parameters.end, js punctuation.terminator {
+	color: #777;
+}
+
+js entity.name {
+	color: #333;
+	font-weight: bold;
+}
+
+/* @end */
+
+/* @group PHP */
+
+php delimiter.source, keyword.definition.php,
+php class name, php function name {
+	color: #AA3731;
+}
+
+php integer.numeric {
+	color: #AB6526;
+	background-color: #f5f5f5;
+}
+
+php variable, php string.double variable {
+	color: #7a3e9d;
+}
+
+php operator.pointer {
+	color: #777;
+}
+
+php identifier.function {
+	font-weight: normal;
+}
+
+container.block.embedded.source.php {
+	background: #E9EFF4;
+}
+
+/* @end */
