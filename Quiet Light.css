@@ -1,6 +1,6 @@
 /*
   @theme Quiet Light
-  @override-placeholders html, xml, css, php, php-html
+  @override-placeholders css, php, php-html, markdown
   @author Ian Beck
 */
  
@@ -201,6 +201,67 @@ ee.attribute {
 
 ee.entity.name, ee.tag.conditional {
 	color: #7a3e9d;
+}
+
+/* @end */
+
+/* @group Markdown */
+
+markdown delimiter, markdown separator, markdown metadata {
+	color: #448C27;
+}
+
+markdown structural.separator {
+	background: #D3E1CD;
+}
+
+markdown header {
+	font-weight: bold;
+}
+
+markdown literal.escape {
+	color: #777;
+}
+
+markdown weight {
+	font-weight: bold;
+}
+
+markdown slant {
+	font-style: italic;
+}
+
+markdown weight slant, markdown slant weight {
+	font-style: italic;
+	font-weight: bold;
+}
+
+markdown code {
+	color: #777;
+}
+
+markdown link {
+	color: #AB6526;
+}
+
+markdown url, markdown email {
+	color: #4B83CD;
+}
+
+markdown literal.title {
+	color: #91B3E0;
+}
+
+markdown keyword.reference {
+	color: #91B583;
+}
+
+markdown image {
+	color: #AB6526;
+}
+
+markdown image delimiter.declarative {
+	font-weight: bold;
 }
 
 /* @end */
