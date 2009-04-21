@@ -199,7 +199,7 @@ ee.attribute {
 	color: #AB6526;
 }
 
-ee.entity.name, ee.tag.conditional {
+ee.entity.name, ee.tag.conditional, ee.tag > name {
 	color: #7a3e9d;
 }
 
