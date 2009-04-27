@@ -34,7 +34,7 @@ storage.type {
 	color: #7a3e9d;
 }
 
-keyword.control {
+keyword.control, keyword.modifier {
 	color: #4B83CD;
 }
 
