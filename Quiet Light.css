@@ -26,7 +26,7 @@ string.quoted {
 	color: #448C27;
 }
 
-constant.numeric, literal.numeric, literal.keyword, keyword.constant, keyword.definition {
+constant.numeric, literal.numeric, literal.character, literal.keyword, keyword.constant, identifier.constant, keyword.definition {
 	color: #AB6526;
 }
 
