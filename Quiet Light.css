@@ -1,6 +1,6 @@
 /*
   @theme Quiet Light
-  @override-placeholders css, php, php+html, markdown, ee
+  @override-placeholders css, php, php-html, markdown, ee, haskell, bash
   @author Ian Beck
 */
  
@@ -332,6 +332,47 @@ markdown image {
 
 markdown image delimiter.declarative {
 	font-weight: bold;
+}
+
+/* @end */
+
+/* @group Haskell */
+
+haskell processing, haskell comment.documentation {
+	color: #aaa;
+	font-style: normal;
+}
+
+haskell identifier.module {
+	color: #AA3731;
+	font-weight: bold;
+}
+
+haskell identifier.type {
+	color: #7a3e9d;
+	font-weight: bold;
+}
+
+haskell identifier.function, haskell identifier.operator {
+	color: #333;
+	font-weight: normal;
+}
+
+haskell identifier.variable {
+	color: #7a3e9d;
+}
+
+/* @end */
+
+/* @group Bash */
+
+bash identifier.function {
+	color: #333;
+	font-weight: normal;
+}
+
+bash identifier.variable {
+	color: #7a3e9d;
 }
 
 /* @end */
