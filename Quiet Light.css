@@ -1,6 +1,6 @@
 /*
   @theme Quiet Light
-  @override-placeholders css, php, php-html, markdown
+  @override-placeholders css, php, php+html, markdown
   @author Ian Beck
 */
  
@@ -160,10 +160,18 @@ js entity.name {
 
 /* @group PHP */
 
-php delimiter.source, keyword.definition.php,
-php class name, php function name {
+php delimiter.source, php delimiter.source > keyword.definition,
+php class name, php name {
 	color: #AA3731;
 	font-weight: bold;
+}
+
+php keyword.definition {
+	color: #4B83CD;
+}
+
+php modifier, php keyword.constant.class {
+	color: #AB6526;
 }
 
 php integer.numeric {
@@ -175,12 +183,25 @@ php variable, php string.double variable {
 	color: #7a3e9d;
 }
 
-php operator.pointer {
+php keyword.constant.other {
+	color: #4B83CD;
+}
+
+php operator.pointer, php delimiter.pointer {
 	color: #777;
 }
 
-php identifier.function {
+php identifier.function > name, php literal.keyword {
+	color: #AA3731;
 	font-weight: normal;
+}
+
+php identifier.function {
+	color: #AA3731;
+}
+
+php identifier.function parenthesis, php identifier.function square-brace {
+	color: #333;
 }
 
 container.block.embedded.source.php {
