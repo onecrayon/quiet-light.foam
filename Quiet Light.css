@@ -42,6 +42,11 @@ operator {
 	color: #777;
 }
 
+invalid {
+	color: #600;
+	background: rgba(150, 0, 0, .08);
+}
+
 /* @end */
 
 /* @group HTML */
