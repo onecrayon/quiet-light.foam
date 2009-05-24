@@ -166,7 +166,7 @@ js entity.name {
 /* @group PHP */
 
 php delimiter.source, php delimiter.source > keyword.definition,
-php class name, php name {
+php class name, php name, php function > name {
 	color: #AA3731;
 	font-weight: bold;
 }
@@ -175,7 +175,8 @@ php keyword.definition {
 	color: #4B83CD;
 }
 
-php modifier, php keyword.constant.class {
+php modifier, php keyword.constant.class,
+php keyword.modifier {
 	color: #AB6526;
 }
 
@@ -184,7 +185,7 @@ php integer.numeric {
 	background-color: #E6EBF2;
 }
 
-php variable, php string.double variable {
+php > variable, php string.double > variable {
 	color: #7a3e9d;
 }
 
@@ -213,6 +214,10 @@ container.block.embedded.source.php {
 	background: #E6EBF2;
 }
 
+php variable operator {
+	color:  #7a3e9d;
+}
+
 /* @end */
 
 /* @group ExpressionEngine */
@@ -228,7 +233,7 @@ ee ee.tag > attribute {
 	color: #AB6526;
 }
 
-ee ee.tag.self-closing.conditional { background: #f5f5f5; }
+ee > ee.tag.self-closing.conditional { background: #f5f5f5; }
 
 ee > ee.tag.self-closing,
 ee > ee.tag.self-closing > name, 
