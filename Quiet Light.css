@@ -215,7 +215,7 @@ container.block.embedded.source.php {
 	background: #E6EBF2;
 }
 
-php variable operator {
+php variable operator, php function variable, php block variable {
 	color:  #7a3e9d;
 }
 
