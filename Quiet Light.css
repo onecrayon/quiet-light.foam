@@ -172,7 +172,7 @@ php class name, php name, php function > name {
 	font-weight: bold;
 }
 
-php keyword.definition {
+php keyword.definition, php keyword.function {
 	color: #4B83CD;
 }
 
@@ -207,7 +207,11 @@ php identifier.function {
 	color: #AA3731;
 }
 
-php identifier.function parenthesis, php identifier.function square-brace {
+php literal.keyword.bool {
+	color: #AB6526;
+}
+
+php identifier.function parenthesis, php identifier.function square-brace, php identifier.function comma {
 	color: #333;
 }
 
@@ -217,6 +221,16 @@ container.block.embedded.source.php {
 
 php variable operator, php function variable, php block variable {
 	color:  #7a3e9d;
+}
+
+php if function parenthesis, php elseif function parenthesis,
+php while function parenthesis, php switch function parenthesis,
+php for function parenthesis, php foreach function parenthesis {
+	color: #555;
+}
+
+php block function function parenthesis {
+	color: #777;
 }
 
 /* @end */
