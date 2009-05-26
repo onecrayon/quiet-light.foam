@@ -58,6 +58,7 @@ tag {
 entity.name, tag > name {
 	color: #4B83CD;
 	background: #f5f5f5;
+	font-weight: normal;
 }
 
 /* Deprecated elements */
