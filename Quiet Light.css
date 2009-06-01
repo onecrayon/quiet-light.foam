@@ -207,7 +207,7 @@ php identifier.function {
 	color: #AA3731;
 }
 
-php literal.keyword.bool {
+php literal.keyword.bool, php literal.keyword.null {
 	color: #AB6526;
 }
 
