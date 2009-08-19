@@ -26,7 +26,7 @@ string.quoted {
 	color: #448C27;
 }
 
-constant.numeric, literal.numeric, literal.character, literal.keyword, keyword.constant, identifier.constant, keyword.definition {
+constant.numeric, literal.numeric, literal.character, literal.keyword {
 	color: #AB6526;
 }
 
@@ -34,7 +34,8 @@ storage.type {
 	color: #7a3e9d;
 }
 
-keyword.control, keyword.modifier {
+keyword.control, keyword.modifier,
+keyword.constant, identifier.constant, keyword.definition {
 	color: #4B83CD;
 }
 
@@ -172,7 +173,8 @@ php class name, php name, php function > name {
 	font-weight: bold;
 }
 
-php keyword.definition, php keyword.function {
+php keyword.definition, php keyword.function,
+php > keyword.definition {
 	color: #4B83CD;
 }
 
@@ -261,7 +263,8 @@ ee > ee.tag.self-closing > punctuation.definition {
 
 /* end of the placeholder killer crap */
 
-ee.tag, ee ee.tag > ee.attribute-name, ee.operator {
+ee.tag, ee ee.tag > ee.attribute-name, ee.operator,
+ee ee.tag > ee.punctuation.definition {
 	color: #B19BBD;
 }
 
@@ -372,6 +375,22 @@ bash identifier.function {
 }
 
 bash identifier.variable {
+	color: #7a3e9d;
+}
+
+/* @end */
+
+/* @group Python */
+
+python container name, python function name {
+	color: #AA3731;
+}
+
+python container parameters name {
+	color: #333;
+}
+
+python variable type {
 	color: #7a3e9d;
 }
 
