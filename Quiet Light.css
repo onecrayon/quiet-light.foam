@@ -235,6 +235,14 @@ php block function function parenthesis {
 	color: #777;
 }
 
+php class.static class.name {
+	color: #AA3731;
+}
+
+php class.static property.name {
+    color: #7a3e9d;
+}
+
 /* @end */
 
 /* @group ExpressionEngine */
