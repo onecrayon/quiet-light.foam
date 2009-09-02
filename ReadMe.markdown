@@ -29,3 +29,5 @@ in the [Espresso forums][forums].
 
    [issues]: http://github.com/onecrayon/quiet-light.foam/issues
    [forums]: http://wiki.macrabbit.com/forums/
+
+Quiet Light is available under the MIT license. Use and remix as you will.
