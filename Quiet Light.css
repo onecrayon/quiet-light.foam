@@ -35,7 +35,8 @@ storage.type {
 }
 
 keyword.control, keyword.modifier,
-keyword.constant, identifier.constant, keyword.definition {
+keyword.constant, identifier.constant, keyword.definition,
+language.constant {
 	color: #4B83CD;
 }
 
@@ -150,7 +151,7 @@ js.embedded {
 	background: #EAEBE6;
 }
 
-js keyword.operator.new {
+js keyword.operator.new, js variable.language {
 	color: #7a3e9d;
 }
 
