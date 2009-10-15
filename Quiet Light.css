@@ -404,3 +404,31 @@ python variable type {
 }
 
 /* @end */
+
+/* @group AS3 */
+
+as3 keyword.definition.as3, as3 keyword.control.flow {
+	color: #4B83CD;
+}
+
+as3 keyword.definition.class, as3 container.method.call > keyword.definition.function {
+	color: #AA3731;
+}
+
+keyword.operators.as3 {
+	color: #777;
+}
+
+as3 container.method.call > name {
+	color: #333;
+}
+
+as3 container.method > name {
+	color: #7a3e9d;
+}
+
+as3 literal.keyword, as3 integral.value, as3 numeric.value, as3 literal.numeric, as3 literal.numeric > delimiter {
+	color: #AB6526;
+}
+
+/* @end */
