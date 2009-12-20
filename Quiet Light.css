@@ -432,3 +432,35 @@ as3 literal.keyword, as3 integral.value, as3 numeric.value, as3 literal.numeric,
 }
 
 /* @end */
+
+/* @group ColdFusion */
+
+cfm.tag, cfm.tag > attribute-name {
+	color: #B19BBD;
+}
+
+cfm.tag > name {
+	color:  #7a3e9d;
+}
+
+cfm operator, cfm keyword {
+	color: #AB6526;
+}
+
+cfml.embedded output {
+	color: #333;
+}
+
+cfml.embedded coldfusion.embedded {
+	color: #AB6526;
+}
+
+cfm function {
+	color:  #AA3731;
+}
+
+function.cfm > parenthesis {
+	color: #AB6526;
+}
+
+/* @end */
