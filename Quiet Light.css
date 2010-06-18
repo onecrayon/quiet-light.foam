@@ -246,6 +246,26 @@ php class.static property.name {
 
 /* @end */
 
+/* @group Regex */
+
+regex operator {
+	color: #B19BBD;
+}
+
+regex.group punctuation.definition, regex anchor, regex escaped, regex.character-class {
+	color: #7a3e9d;
+}
+
+regex.character-class.set {
+	color: #333;
+}
+
+regex.character-class punctuation.definition {
+	color: #7a3e9d;
+}
+
+/* @end */
+
 /* @group ExpressionEngine */
 
 /* This crap cancels out the damned placeholder theme */
