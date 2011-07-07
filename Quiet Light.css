@@ -1,11 +1,11 @@
 /*
   @theme Quiet Light
-  @override-placeholders css, php, php-html, markdown, ee, haskell, bash
+  @override-placeholders css, php, apache, markdown, ee, haskell, bash
   @author Ian Beck
 */
- 
-@base {
-	color: #333;
+
+:document-base {
+	color: #333333;
 	background-color: #f5f5f5;
 	insertion-point-color: #000;
 	selection-background-color: default;
@@ -13,40 +13,51 @@
 
 /* @group Generic */
 
-tag, source, sourcecode {
+tag, sourcecode, css, python, ruby, javascript {
 	spell-check: disabled;
 }
 
 comment {
-	color: #aaa;
-	font-style: italic;
+	color: #aaaaaa;
 }
 
-string.quoted {
-	color: #448C27;
-}
-
-constant.numeric, literal.numeric, literal.character, literal.keyword {
-	color: #AB6526;
-}
-
-storage.type {
-	color: #7a3e9d;
-}
-
-keyword.control, keyword.modifier,
-keyword.constant, identifier.constant, keyword.definition,
-language.constant {
-	color: #4B83CD;
+string {
+	color: #448c27;
 }
 
 operator {
-	color: #777;
+	color: #777777;
+}
+
+constant, numeric, character {
+	color: #ab6526;
+}
+
+keyword {
+	color: #4b83cd;
+}
+
+comment keyword {
+	color: #aaaaaa;
+	font-weight: bold;
+}
+
+variable {
+	color: #7a3e9d;
+}
+
+function:not(definition) {
+	color: #aa3731;
+}
+
+function.definition name, class.definition name {
+	font-weight: bold;
+	color: #aa3731;
 }
 
 invalid {
-	color: #600;
-	background: rgba(150, 0, 0, .08);
+	color: #660000;
+	background: rgba(150, 0, 0, 0.08);
 }
 
 /* @end */
@@ -54,11 +65,11 @@ invalid {
 /* @group HTML */
 
 tag {
-	color: #91B3E0;
+	color: #91b3e0;
 }
 
 entity.name, tag > name {
-	color: #4B83CD;
+	color: #4b83cd;
 	background: #f5f5f5;
 	font-weight: normal;
 }
@@ -74,73 +85,71 @@ entity.name[text='menu'],
 entity.name[text='s'],
 entity.name[text='strike'],
 entity.name[text='u'] {
-	background: rgba(150, 0, 0, .08);
+	background: rgba(150, 0, 0, 0.08);
 }
 
 entity.character {
-	color: #AB6526;
+	color: #ab6526;
 }
 
 attribute-name {
-	color: #91B3E0;
-	font-style: italic;
+	color: #91b3e0;
 }
 
 tag.doctype, tag.doctype entity.name {
-	color: #aaa;
+	color: #aaaaaa;
 }
 
-/* @end */
- 
-/* @group CSS */
-
-css {
+comment.cdata {
 	spell-check: disabled;
 }
 
-css punctuation,
-css property-value > punctuation.separator.css,
-css property-value > punctuation.terminator.rule.css {
-	color: #333;
+/* @end */
+
+/* @group CSS */
+
+css.embedded {
+	background: #efe8f3;
 }
 
-css > property-name {
-	color: #AB6526;
-}
-
-css property-value {
-	color: #448C27;
-}
-
-css.selector, css.selector > entity > punctuation {
+css selector, css selector punctuation, css selector constant {
 	color: #7a3e9d;
 }
 
-css keyword.important, keyword.important.css {
+css property-name {
+	color: #ab6526;
+}
+
+css property-value, css property-value constant, css property-value keyword {
+	color: #448c27;
+}
+
+css punctuation {
+	color: #333333;
+}
+
+css keyword.important {
 	font-weight: bold;
 }
 
-css comment punctunation,
-css comment.block.css,
-css comment punctuation.begin,
-css comment punctuation.end {
-	color: #aaa;
+css keyword.control punctuation {
+	color: #91b3e0;
 }
 
-css color,
-css punctuation.definition.constant,
-css group-start.comment.block.css,
-css group-end.comment.block.css {
-	color: #448C27;
+css comment punctuation {
+	color: #aaaaaa;
 }
 
-css .group-start .name {
-	color: #448C27;
+css color, css color punctuation, css group-start, css group-end {
+	color: #448c27;
+}
+
+css group-start name {
 	font-weight: bold;
 }
 
-embedded.styling.css, embedded.property-list.css {
-	background: #EFE8F3;
+css function parameter {
+	color: #448c27;
 }
 
 /* @end */
@@ -148,157 +157,281 @@ embedded.styling.css, embedded.property-list.css {
 /* @group Javascript */
 
 js.embedded {
-	background: #EAEBE6;
+	background: #eaebe6;
 }
 
-js keyword.operator.new, js variable.language {
+js variable {
+	color: #333333;
+}
+
+js storage.type, js keyword.new {
 	color: #7a3e9d;
 }
 
-js meta, js parameters.begin, js parameters.end, js punctuation.terminator {
-	color: #777;
+js punctuation {
+	color: #777777;
 }
 
-js entity.name {
-	color: #333;
+js comment > punctuation {
+	color: #aaaaaa;
+}
+
+js string > punctuation, js variable.string {
+	color: #448c27;
+}
+
+js class.constructor > class {
+	color: #333333;
 	font-weight: bold;
+}
+
+js variable.language, js character.escape > punctuation {
+	color: #ab6526;
+}
+
+js function.definition > string > name {
+	color: #448c27;
+}
+
+js function.definition > name, js function.definition > accessor-path > variable {
+	color: #aa3731;
 }
 
 /* @end */
 
 /* @group PHP */
 
-php delimiter.source, php delimiter.source > keyword.definition,
-php class name, php name, php function > name {
-	color: #AA3731;
+php {
+	background: #e6ebf2;
+}
+
+php delimiter.source, php delimiter.source > *, php definition name {
+	color: #aa3731;
 	font-weight: bold;
 }
 
-php keyword.definition, php keyword.function,
-php > keyword.definition {
-	color: #4B83CD;
+php keyword.language {
+	color: #4b83cd;
 }
 
-php modifier, php keyword.constant.class,
-php keyword.modifier {
-	color: #AB6526;
+php keyword.variable, php keyword.variable.language {
+	color: #7a3e9d;
+	font-weight: bold;
 }
 
-php integer.numeric {
-	color: #AB6526;
-	background-color: #E6EBF2;
+php delimiter, php string > expression.complex > punctuation {
+	color: #777777;
 }
 
-php > variable, php string.double > variable {
+php function {
+	color: #aa3731;
+}
+
+php constant {
+	color: #333333;
+}
+
+php constant.numeric, php constant.language, php constant.character {
+	color: #ab6526;
+}
+
+php embedded.html {
+	background-color: #f5f5f5;
+}
+
+/* @end */
+
+/* @group Apache */
+
+apache keyword.directive {
+	color: #4b83cd;
+}
+
+apache tag {
+	color: #ddb0ad;
+}
+
+apache entity.name, apache tag > name {
+	color: #aa3731;
+}
+
+apache regex.operator.not {
 	color: #7a3e9d;
 }
 
-php keyword.constant.other {
-	color: #4B83CD;
+/* @end */
+
+/* @group Python */
+
+python function.definition, python class.definition {
+	color: #333333;
 }
 
-php operator.pointer, php delimiter.pointer {
-	color: #777;
+python function name, python class name {
+	color: #aa3731;
+	font-weight: bold;
 }
 
-php identifier.function > name, php literal.keyword {
-	color: #AA3731;
-	font-weight: normal;
+python decorator {
+	color: #aaaaaa;
 }
 
-php identifier.function {
-	color: #AA3731;
+python variable {
+	color: #333333;
 }
 
-php literal.keyword.bool, php literal.keyword.null {
-	color: #AB6526;
+python keyword.variable {
+	color: #7a3e9d;
 }
 
-php identifier.function parenthesis, php identifier.function square-brace, php identifier.function comma {
-	color: #333;
+python punctuation {
+	color: #777777;
 }
 
-container.block.embedded.source.php {
-	background: #E6EBF2;
+python string > punctuation {
+	color: #448c27;
 }
 
-php variable operator, php function variable, php block variable {
-	color:  #7a3e9d;
+python comment punctuation, python decorator punctuation {
+	color: #aaaaaa;
 }
 
-php if function parenthesis, php elseif function parenthesis,
-php while function parenthesis, php switch function parenthesis,
-php for function parenthesis, php foreach function parenthesis {
-	color: #555;
+python constant punctuation {
+	color: #ab6526;
 }
 
-php block function function parenthesis {
-	color: #777;
+python variable.function {
+	color: #aa3731;
 }
 
-php class.static class.name {
-	color: #AA3731;
+/* @end */
+
+/* @group Ruby */
+
+ruby module name {
+	color: #aa3731;
+	font-weight: bold;
 }
 
-php class.static property.name {
-    color: #7a3e9d;
+embedded.ruby {
+	background: #e6ebf2;
+}
+
+ruby delimiter.source, ruby delimiter.source > * {
+	color: #aa3731;
+	font-weight: bold;
 }
 
 /* @end */
 
 /* @group Regex */
 
-regex operator {
-	color: #B19BBD;
+regex.operator {
+	color: #b19bbd;
 }
 
-regex.group punctuation.definition, regex anchor, regex escaped, regex.character-class {
+regex.group punctuation.definition, regex.anchor, regex.escaped, regex.character-class {
 	color: #7a3e9d;
 }
 
 regex.character-class.set {
-	color: #333;
+	color: #333333;
 }
 
 regex.character-class punctuation.definition {
 	color: #7a3e9d;
 }
 
+regex-replace.back-reference {
+	color: #7a3e9d;
+}
+
 /* @end */
+
+/* @group Markdown */
+
+markdown > punctuation.definition, markdown *:not(html,comment) punctuation.definition, markdown separator {
+	color: #448c27;
+}
+
+markdown separator, markdown hard-break {
+	background: #D3E1CD;
+}
+
+markdown header {
+	font-weight: bold;
+}
+
+markdown bold {
+	font-weight: bold;
+}
+
+markdown italic {
+	font-style: italic;
+}
+
+markdown bold italic, markdown italic bold {
+	font-weight: bold;
+	font-style: italic;
+}
+
+markdown code {
+	color: #777777;
+}
+
+markdown link, markdown image {
+	color: #7a3e9d;
+}
+
+markdown link > punctuation, markdown image > punctuation {
+	color: #448c27;
+}
+
+markdown url, markdown email {
+	color: #4b83cd;
+}
+
+markdown keyword.reference {
+	color: #ab6526;
+}
+
+/* @end */
+
+/* @group Third Party */
 
 /* @group ExpressionEngine */
 
 /* This crap cancels out the damned placeholder theme */
 
-ee ee.tag > attribute > attribute-name  {
-	color: #B19BBD;
+ee ee.tag > attribute > attribute-name {
+	color: #b19bbd;
 	font-weight: normal;
 }
 
-ee ee.tag > attribute { 
-	color: #AB6526;
+ee ee.tag > attribute {
+	color: #ab6526;
 }
 
-ee > ee.tag.self-closing.conditional { background: #f5f5f5; }
+ee > ee.tag.self-closing.conditional {
+	background: #f5f5f5;
+}
 
-ee > ee.tag.self-closing,
-ee > ee.tag.self-closing > name, 
-ee > ee.tag.self-closing > punctuation, 
-ee > ee.tag.self-closing attribute-name { color: #7a3e9d;}
+ee > ee.tag.self-closing, ee > ee.tag.self-closing > name, ee > ee.tag.self-closing > punctuation, ee > ee.tag.self-closing attribute-name {
+	color: #7a3e9d;
+}
 
 ee > ee.tag.self-closing > punctuation.definition {
-	color: #B19BBD;
+	color: #b19bbd;
 }
 
 /* end of the placeholder killer crap */
 
-ee.tag, ee ee.tag > ee.attribute-name, ee.operator,
-ee ee.tag > ee.punctuation.definition {
-	color: #B19BBD;
+ee.tag, ee ee.tag > ee.attribute-name, ee.operator, ee ee.tag > ee.punctuation.definition {
+	color: #b19bbd;
 }
 
 ee.attribute {
-	color: #AB6526;
+	color: #ab6526;
 }
 
 ee ee.tag > ee.entity.name, ee ee.tag.conditional, ee ee.tag > name {
@@ -307,76 +440,15 @@ ee ee.tag > ee.entity.name, ee ee.tag.conditional, ee ee.tag > name {
 
 /* @end */
 
-/* @group Markdown */
-
-markdown delimiter, markdown separator, markdown metadata {
-	color: #448C27;
-}
-
-markdown structural.separator {
-	background: #D3E1CD;
-}
-
-markdown header {
-	font-weight: bold;
-}
-
-markdown literal.escape {
-	color: #777;
-}
-
-markdown weight {
-	font-weight: bold;
-}
-
-markdown slant {
-	font-style: italic;
-}
-
-markdown weight slant, markdown slant weight {
-	font-style: italic;
-	font-weight: bold;
-}
-
-markdown code {
-	color: #777;
-}
-
-markdown link {
-	color: #AB6526;
-}
-
-markdown url, markdown email {
-	color: #4B83CD;
-}
-
-markdown literal.title {
-	color: #91B3E0;
-}
-
-markdown keyword.reference {
-	color: #91B583;
-}
-
-markdown image {
-	color: #AB6526;
-}
-
-markdown image delimiter.declarative {
-	font-weight: bold;
-}
-
-/* @end */
-
 /* @group Haskell */
 
 haskell processing, haskell comment.documentation {
-	color: #aaa;
+	color: #aaaaaa;
 	font-style: normal;
 }
 
 haskell identifier.module {
-	color: #AA3731;
+	color: #aa3731;
 	font-weight: bold;
 }
 
@@ -386,7 +458,7 @@ haskell identifier.type {
 }
 
 haskell identifier.function, haskell identifier.operator {
-	color: #333;
+	color: #333333;
 	font-weight: normal;
 }
 
@@ -399,7 +471,7 @@ haskell identifier.variable {
 /* @group Bash */
 
 bash identifier.function {
-	color: #333;
+	color: #333333;
 	font-weight: normal;
 }
 
@@ -409,38 +481,22 @@ bash identifier.variable {
 
 /* @end */
 
-/* @group Python */
-
-python container name, python function name {
-	color: #AA3731;
-}
-
-python container parameters name {
-	color: #333;
-}
-
-python variable type {
-	color: #7a3e9d;
-}
-
-/* @end */
-
 /* @group AS3 */
 
 as3 keyword.definition.as3, as3 keyword.control.flow {
-	color: #4B83CD;
+	color: #4b83cd;
 }
 
 as3 keyword.definition.class, as3 container.method.call > keyword.definition.function {
-	color: #AA3731;
+	color: #aa3731;
 }
 
 keyword.operators.as3 {
-	color: #777;
+	color: #777777;
 }
 
 as3 container.method.call > name {
-	color: #333;
+	color: #333333;
 }
 
 as3 container.method > name {
@@ -448,7 +504,7 @@ as3 container.method > name {
 }
 
 as3 literal.keyword, as3 integral.value, as3 numeric.value, as3 literal.numeric, as3 literal.numeric > delimiter {
-	color: #AB6526;
+	color: #ab6526;
 }
 
 /* @end */
@@ -456,31 +512,33 @@ as3 literal.keyword, as3 integral.value, as3 numeric.value, as3 literal.numeric,
 /* @group ColdFusion */
 
 cfm.tag, cfm.tag > attribute-name {
-	color: #B19BBD;
+	color: #b19bbd;
 }
 
 cfm.tag > name {
-	color:  #7a3e9d;
+	color: #7a3e9d;
 }
 
 cfm operator, cfm keyword {
-	color: #AB6526;
+	color: #ab6526;
 }
 
 cfml.embedded output {
-	color: #333;
+	color: #333333;
 }
 
 cfml.embedded coldfusion.embedded {
-	color: #AB6526;
+	color: #ab6526;
 }
 
 cfm function {
-	color:  #AA3731;
+	color: #aa3731;
 }
 
 function.cfm > parenthesis {
-	color: #AB6526;
+	color: #ab6526;
 }
+
+/* @end */
 
 /* @end */
